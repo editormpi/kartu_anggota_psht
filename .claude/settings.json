@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\xampp\\\\htdocs\\\\psht-jember-portal\" -Force | Select-Object Name, @{Name='Type';Expression={if\\($_.PSIsContainer\\){'Directory'}else{'File'}}} | Format-Table -AutoSize)",
+      "Bash(composer remove *)",
+      "Bash(del /q /s app\\\\Filament\\\\*)",
+      "Bash(rmdir /s /q app\\\\Filament)",
+      "Bash(del /q app\\\\Providers\\\\Filament\\\\AdminPanelProvider.php)",
+      "Bash(rmdir /s /q app\\\\Providers\\\\Filament)",
+      "Bash(composer dump-autoload *)",
+      "Bash(php -r \"require 'vendor/autoload.php';\")",
+      "Bash(php -l app/Http/Controllers/Admin/MemberController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/BillController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/PaymentHistoryController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/CertificateController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/DashboardController.php)"
+    ]
+  }
+}
